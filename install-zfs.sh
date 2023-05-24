@@ -1296,7 +1296,7 @@ function create_swap_volume {
       -V "${v_swap_size}G" -b "$(getconf PAGESIZE)" \
       -o compression=zle -o logbias=throughput -o sync=always -o primarycache=metadata -o secondarycache=none -o com.sun:auto-snapshot=false \
       "$v_rpool_name/swap"
-
+    sleep 30
     mkswap -f "/dev/zvol/$v_rpool_name/swap"
   fi
 }
